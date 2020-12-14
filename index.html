@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>todo</title>
+</head>
+
+<body>
+    <header>
+        <h1>Daily To-Do list manager</h1>
+    </header>
+    <main>
+        <header>
+            <h3 class="header__day">péntek13</h3>
+            <h3 class="header__date">1970-01-01</h3>
+            <div class="header__new-todo-item">
+                <input type="text" placeholder="Take the garbage out">
+                <button>
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </header>
+        <section class="section__pending">
+            <p>You have <span>0</span> pending items</p>
+
+            <div class="section__todos--pending"></div>
+        </section>
+        <section class="section__completed">
+            <p>Completed tasks: <span>0</span>%</p>
+
+            <div class="section__todos--completed"></div>
+        </section>
+    </main>
+    <footer>
+        <button class="footer__btn--complete">Show Complete</button>
+        <button class="footer__btn--clear">Clear All</button>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
