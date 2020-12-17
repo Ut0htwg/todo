@@ -97,7 +97,7 @@ import localDB from './localDB.js';
     }
 
     const setPendingToCompleted = (event) => {
-        arrayIndex = event.target.parentElement.
+        arrayIndex = event.currentTarget.parentElement.
             querySelector('input.hidden-input').value;
         todos[arrayIndex].done = true;
         localDB.setItem('todos', todos);
@@ -105,7 +105,7 @@ import localDB from './localDB.js';
     };
 
     const deleteArrayElement = (event) => {   
-        arrayIndex = event.target.parentElement.
+        arrayIndex = event.currentTarget.parentElement.
             querySelector('input.hidden-input').value;
         todos.splice(arrayIndex, 1);
         localDB.setItem('todos', todos);    
@@ -116,6 +116,7 @@ import localDB from './localDB.js';
         todosPending.innerHTML = '';
         todosCompleted.innerHTML = '';
         footerBtnCompleteText = footerBtnComplete.innerHTML;
+        newTodoItemInput.focus();
         const savedTodos = localDB.getItem('todos');
         i = 0; j = 0; k=0;      // counters for pending/complete/arrayIndex
         if (savedTodos) {
@@ -142,7 +143,9 @@ import localDB from './localDB.js';
             <input type="checkbox" class="check-box">
             <input type="hidden" class="hidden-input" value=${k}>
             <span>${todo.text}</span>
-            <button class="deleteBtn">x</button>  
+            <button class="deleteBtn">
+                <i class="fa fa-trash"></i>
+            </button>  
         `;
         i++;
     };
@@ -155,7 +158,9 @@ import localDB from './localDB.js';
             <input type="checkbox" checked=true disabled=true>
             <input type="hidden" class="hidden-input" value=${k}>
             <span>${todo.text}</span>
-            <button class="deleteBtn">x</button>        
+            <button class="deleteBtn">
+                <i class="fa fa-trash"></i>
+            </button>        
         `;
         j++;
     };
