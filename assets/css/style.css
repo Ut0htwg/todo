@@ -1,6 +1,61 @@
-.display-none {
+.display-none {         /* needed to control if an element is to be displayed */
     display: none;
 }
-.btn-group {
-    display: inline-block;
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 30%;
+    background-color:green;
 }
+
+header, main, section, footer {
+    background-color: #eee;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    background-color: green;
+    color: #eee;
+}
+
+button {
+    background-color: #ccc;
+}
+
+button:hover {
+    background-color: #aaa;
+}
+
+
+footer>button {
+    margin: 1rem;
+    padding: 0 auto;
+}
+
+.section__pending {
+    background-color: #cc9;
+    padding-bottom: .5rem;
+}
+
+.section__todos--pending>div>button {
+    position: relative;
+    left: 5rem;
+    font-weight: 900;
+}
+
+.section__completed {
+    background-color: #cc7;
+    padding-bottom: .5rem;
+}
+
+.section__todos--completed>div>button {
+    position: relative;
+    left: 6rem;
+    font-weight: 900;
+}
+
+

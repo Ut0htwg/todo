@@ -1,4 +1,7 @@
 'use Strict';
+
+import localDB from './localDB.js';
+
 (function () {
     // test data
     let todos = [
@@ -31,24 +34,6 @@
                         'Friday',
                         'Saturday'];
     let   footerBtnCompleteText = '';
-                          
-    // CRUD - localStorageHandler - C===U (a localStorage-ban a tartalom csak egészében módosíható)
-    const localDB = {
-        setItem(key, value) {
-            value = JSON.stringify(value);
-            localStorage.setItem(key, value);
-        },
-        getItem(key) {
-            const value = localStorage.getItem(key);
-            if (!value) {
-                return null;
-            }
-            return JSON.parse(value);
-        },
-        removeItem(key) {
-            localStorage.removeItem(key);
-        },
-    };
 
     const addNewPendingItem = () => {
         const value = newTodoItemInput.value;
